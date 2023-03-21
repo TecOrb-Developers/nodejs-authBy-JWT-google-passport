@@ -12,22 +12,24 @@ What we have implemented in this project?
 
 
 #Required dependencies:
-Node is installed (v 14.x)
-Postman is installed (Version 10.12.3-230318-0431)
-Mongodb altles free tier cluster
-Git is installed.
+- Node is installed (v 14.x)
+- Postman is installed (Version 10.12.3-230318-0431)
+- Mongodb altles free tier cluster
+- Git is installed.
 
 #Create development.env to setup required environment variables
-* Go to the pre-start folder and env>development.env file directory
-NODE_ENV=development
-jwt_secret_key=
-MONGO_URI=
+- Go to the pre-start folder and env>development.env file directory
+- NODE_ENV=development
+- jwt_secret_key=""
+- MONGO_URI=""
 
-GOOGLE_PLACES_FIND_URL= 
-GOOGLE_PLACES_API_KEY= 
-FRONTEND_URL=google.com
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
+- GOOGLE_PLACES_FIND_URL= ""
+- GOOGLE_PLACES_API_KEY= ""
+- FRONTEND_URL=google.com
+- GOOGLE_CLIENT_ID=""
+- GOOGLE_CLIENT_SECRET=""
+
+
 ## Server ##
 PORT=3000
 HOST=localhost
