@@ -15,3 +15,7 @@
 
 ### prod build run
 `node dist/index.js`
+
+
+# postman  api url
+type get  "localhost:3000/auth/google"
