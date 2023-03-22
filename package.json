@@ -1,28 +1,52 @@
 {
-  "name": "passport_auth_nodejs",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "name": "passport-google-verify-token",
+  "version": "3.0.0",
+  "description": "Google Token strategy for Passport, let's you validate the user token server side, usefull for mobile app Google authentication for example. The validation is done by the official Google Auth library for NodeJs.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js",
-    "dev": "nodemon app.js"
+    "clean": "rimraf lib",
+    "test": "mocha -r ts-node/register tests/**/*.test.ts --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml",
+    "cover": "nyc -r lcov -e .ts -x \"*.test.ts\" mocha -r ts-node/register tests/**/*.test.ts && nyc report",
+    "lint": "tslint -p tsconfig.json",
+    "build": "tsc",
+    "prepublishOnly": "npm run clean && npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "passport",
+    "google",
+    "token",
+    "authentication",
+    "nodejs"
+  ],
+  "repository": {
+    "type": "git"
+  },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.20.1",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "mongoose": "^6.9.1",
-    "mongoose-findorcreate": "^3.0.0",
-    "nodemon": "^2.0.20",
-    "passport": "^0.6.0",
-    "passport-google-oauth": "^2.0.0",
-    "passport-google-oauth2": "^0.2.0",
-    "passport-jwt": "^4.0.1",
-    "passport-local-mongoose": "^7.1.2",
-    "path": "^0.12.7"
+    "google-auth-library": "^8.7.0",
+    "got": "11",
+    "passport-strategy": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.18",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.18",
+    "@types/passport-strategy": "^0.2.35",
+    "chai": "^4.3.4",
+    "chai-passport-strategy": "^3.0.0",
+    "mocha": "^10.2.0",
+    "mocha-junit-reporter": "^2.0.0",
+    "nyc": "^15.1.0",
+    "prettier": "^2.3.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.2.4"
   }
 }
