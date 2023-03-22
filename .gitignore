@@ -1,0 +1,7 @@
+node_modules
+/lib
+/.vscode
+TEST-RESULTS.xml
+
+/coverage
+/.nyc_output
